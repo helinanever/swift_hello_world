@@ -1,5 +1,5 @@
 workflows:
-    ios-hello-world
+    ios-hello-world:
       name: ios_hello_world
       environment:
         vars:
