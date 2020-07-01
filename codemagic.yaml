@@ -13,7 +13,7 @@ workflows:
             include: true
             source: true
       scripts:
-        - xcodebuild --project "helloworld.xcodeproj" --scheme "helloworld" build
+        - xcodebuild -project "helloworld.xcodeproj" -scheme "helloworld" build
       artifacts:
         - build/ios/**/*.app
         - /tmp/xcodebuild_logs/*.log
