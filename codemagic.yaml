@@ -15,5 +15,4 @@ workflows:
       scripts:
         - xcodebuild -project "helloworld.xcodeproj" -scheme "helloworld" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO build
       artifacts:
-        - build/ios/**/*.app
-        - /tmp/xcodebuild_logs/*.log
+        - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
