@@ -13,6 +13,6 @@ workflows:
             include: true
             source: true
       scripts:
-        - xcodebuild -project "helloworld.xcodeproj" -scheme "helloworld" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO build
+        - xcodebuild -project "helloworld.xcodeproj" -scheme "helloworld" -destination 'platform=iOS Simulator,name=iPhone 11 Pro Max,OS=13.4' clean build test CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
       artifacts:
         - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
