@@ -9,9 +9,6 @@ workflows:
         xcode: latest
         cocoapods: default
         flutter: stable
-      triggering:
-        events:
-          - push
         branch_patterns:
           - pattern: 'master'
             include: true
@@ -35,7 +32,7 @@ workflows:
         - build/ios/ipa/*.ipa
         - /tmp/xcodebuild_logs/*.log
     ios-hello-world-no-code-signing:
-      name: No code signing
+      name: Testing
       environment:
         xcode: latest
         cocoapods: default
