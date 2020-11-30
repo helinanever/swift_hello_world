@@ -1,20 +1,4 @@
 workflows:
-    ios-hello-world:
-      name: Code signing
-      environment:
-        xcode: latest
-        cocoapods: default
-        flutter: stable
-        branch_patterns:
-          - pattern: 'wo_codesign'
-            include: true
-            source: true
-      scripts:
-        - xcodebuild -project "helloworld.xcodeproj" -scheme "helloworld" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO build
-      artifacts:
-        - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
-        - build/ios/ipa/*.ipa
-        - /tmp/xcodebuild_logs/*.log
     ios-hello-world-no-code-signing:
       name: Testing
       environment:
@@ -24,6 +8,7 @@ workflows:
       triggering:
         events:
           - push
+          - pull_request
         branch_patterns:
           - pattern: 'master'
             include: true
