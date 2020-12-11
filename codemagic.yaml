@@ -9,8 +9,8 @@ workflows:
       events:
         - push
     scripts:
-      - name: Build app
-        script: |
+      - name: Build iOS app
+        script:
           xcodebuild build -project "helloworld.xcodeproj" \
           -scheme "helloworld" \
           CODE_SIGN_INDENTITY="" \
