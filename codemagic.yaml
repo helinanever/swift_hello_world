@@ -45,13 +45,14 @@ workflows:
             include: true
             source: true
       scripts:
-        - |
+        - name: Build iOS
+          script: |
             cd $FCI_BUILD_DIR
             xcodebuild build -project "helloworld.xcodeproj" \
-                   -scheme "helloworld" \
-                   CODE_SIGN_INDENTITY="" \
-                   CODE_SIGNING_REQUIRED=NO \
-                   CODE_SIGNING_ALLOWED=NO
+            -scheme "helloworld" \
+            CODE_SIGN_INDENTITY="" \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGNING_ALLOWED=NO
       artifacts:
         - build/**/*.app
         - /tmp/xcodebuild_logs/*.log
